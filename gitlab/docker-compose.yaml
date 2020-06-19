@@ -1,0 +1,18 @@
+gitlab:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  container_name: gitlab
+  hostname: 'gitlab.karimlabs.com'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'https://gitlab.karimlabs.com'
+      letsencrypt['enabled'] = false
+      gitlab_rails['gitlab_shell_ssh_port'] = 2222
+  ports:
+    - '80:80'
+    - '443:443'
+    - '2222:22'
+  volumes:
+    - './srv/gitlab-config:/etc/gitlab'
+    - './srv/gitlab-logs:/var/log/gitlab'
+    - './srv/gitlab-data:/var/opt/gitlab'
