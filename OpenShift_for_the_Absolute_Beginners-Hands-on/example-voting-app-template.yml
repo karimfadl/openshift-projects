@@ -390,7 +390,7 @@ objects:
           from:
             kind: ImageStreamTag
             name: 'result:latest'
-            namespace: voting-application-3
+            namespace: voting-application
           lastTriggeredImage:
         type: ImageChange
       - type: ConfigChange
@@ -446,7 +446,7 @@ objects:
           from:
             kind: ImageStreamTag
             name: 'vote:latest'
-            namespace: voting-application-3
+            namespace: voting-application
           lastTriggeredImage:
         type: ImageChange
       - type: ConfigChange
@@ -501,7 +501,7 @@ objects:
           from:
             kind: ImageStreamTag
             name: 'worker:latest'
-            namespace: voting-application-3
+            namespace: voting-application
           lastTriggeredImage:
         type: ImageChange
       - type: ConfigChange
